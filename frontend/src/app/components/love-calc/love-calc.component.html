@@ -1,0 +1,35 @@
+<div class="container">
+  <header>
+    <h1>Love Calculator</h1>
+  </header>
+
+  <form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <label for="text">First Name</label>
+      <input
+        type="text"
+        name="firstName"
+        [(ngModel)]="firstName"
+        id="firstName"
+        placeholder="Enter First Name"
+      />
+    </div>
+    <div class="form-control">
+      <label for="day">Second Name</label>
+      <input
+        type="text"
+        name="secondName"
+        [(ngModel)]="secondName"
+        id="secondName"
+        placeholder="Enter Second Name"
+      />
+    </div>
+
+    <input type="submit" value="Calculate Love" class="btn btn-block" />
+    <button type="button" (click)="clear()"  class="btn btn-block" >Clear</button>
+  </form>
+
+  <div class="love" *ngIf="percentage > 0">
+    <h3>{{ firstName }} Loves {{ secondName }} {{ percentage }} %</h3>
+  </div>
+</div>
